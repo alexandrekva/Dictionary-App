@@ -12,7 +12,7 @@ import com.example.dictionary.feature_dictionary.data.util.Converters
 
 @Database(
     entities = [WordInfoEntity::class],
-    version = 3
+    version = 4
 )
 @TypeConverters(Converters::class)
 abstract class WordInfoDatabase : RoomDatabase() {
