@@ -5,6 +5,11 @@ import androidx.room.TypeConverter
 import com.example.dictionary.feature_dictionary.domain.models.Meaning
 import com.google.gson.reflect.TypeToken
 
+/**
+ * Classe para conversão de [Meaning] <-> Json
+ * necessária para o Room Databse
+ */
+
 @ProvidedTypeConverter
 class Converters(
     private val jsonParser: JsonParser

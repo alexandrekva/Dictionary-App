@@ -10,6 +10,11 @@ import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
 
+/**
+ * Implementação do repository
+ * responsável pelo consumo da Api e consulta/armazenamento no banco de dados
+ */
+
 class WordInfoRepositoryImpl(
     private val api: DictionaryApi,
     private val dao: WordInfoDao
@@ -19,7 +24,10 @@ class WordInfoRepositoryImpl(
         emit(Resource.Loading())
 
         val wordInfo = dao.getWordInfos(word).map { it.toWordInfo() }
-        emit(Resource.Loading(wordInfo))
+        if (wordInfo.isNotEmpty()) {
+            emit(Resource.Success(wordInfo))
+            return@flow
+        }
 
         try {
             val remoteWordInfos = api.getWordInfo(word = word)

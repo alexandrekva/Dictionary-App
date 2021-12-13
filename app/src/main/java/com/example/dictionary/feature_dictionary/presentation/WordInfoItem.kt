@@ -12,6 +12,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dictionary.feature_dictionary.domain.models.WordInfo
 
+/**
+ * Item da lista de resultados
+ */
+
 @Composable
 fun WordInfoItem(
     wordInfo: WordInfo,
@@ -24,12 +28,18 @@ fun WordInfoItem(
             fontWeight = FontWeight.Bold,
             color = Color.Black
         )
-        Text(
-            text = wordInfo.phonetic,
-            fontWeight = FontWeight.Light
-        )
+
+        wordInfo.phonetic?.let { phonetic ->
+            Text(
+                text = phonetic,
+                fontWeight = FontWeight.Light
+            )
+        }
         Spacer(modifier = Modifier.height(16.dp))
-        Text(text = wordInfo.origin)
+        wordInfo.origin?.let { origin ->
+            Text(text = origin)
+            Spacer(modifier = Modifier.height(8.dp))
+        }
 
         wordInfo.meanings.forEach { meaning ->
             Text(text = meaning.partOfSpeech, fontWeight = FontWeight.Bold)

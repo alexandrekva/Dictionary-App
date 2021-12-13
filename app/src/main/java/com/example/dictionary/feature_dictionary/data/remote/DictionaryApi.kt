@@ -4,6 +4,11 @@ import com.example.dictionary.feature_dictionary.data.remote.dto.WordInfoDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 
+/**
+ * Interface para consumo da Api dictionary
+ * utilizada pelo Retrofit
+ */
+
 interface DictionaryApi {
 
     @GET("/api/v2/entries/en/{word}")

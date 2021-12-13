@@ -2,6 +2,10 @@ package com.example.dictionary.feature_dictionary.data.remote.dto
 
 import com.example.dictionary.feature_dictionary.domain.models.Definition
 
+/**
+ * Data Transfer Object do [Definition]
+ */
+
 data class DefinitionDto(
     val antonyms: List<String>,
     val definition: String,

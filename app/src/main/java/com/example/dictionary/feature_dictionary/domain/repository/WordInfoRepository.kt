@@ -4,6 +4,10 @@ import com.example.dictionary.core.util.Resource
 import com.example.dictionary.feature_dictionary.domain.models.WordInfo
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * Interface de definição do repository
+ */
+
 interface WordInfoRepository {
 
     fun getWordInfo(word: String): Flow<Resource<List<WordInfo>>>

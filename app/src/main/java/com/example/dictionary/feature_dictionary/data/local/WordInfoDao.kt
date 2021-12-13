@@ -6,6 +6,11 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.dictionary.feature_dictionary.data.local.entity.WordInfoEntity
 
+/**
+ * Queries utilizadas pelo Room Database
+ * para inserção, remoção e consulta no banco de dados
+ */
+
 @Dao
 interface WordInfoDao {
 

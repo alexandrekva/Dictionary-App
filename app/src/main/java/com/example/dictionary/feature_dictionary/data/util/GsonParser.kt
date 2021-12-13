@@ -3,6 +3,10 @@ package com.example.dictionary.feature_dictionary.data.util
 import com.google.gson.Gson
 import java.lang.reflect.Type
 
+/**
+ * Implementação dos métodos da interface [JsonParser]
+ */
+
 class GsonParser(
     private val gson: Gson
 ): JsonParser {

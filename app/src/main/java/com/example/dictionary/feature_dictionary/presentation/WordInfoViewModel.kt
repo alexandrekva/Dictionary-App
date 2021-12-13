@@ -16,6 +16,10 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * ViewModel que recebe o caso de uso [GetWordInfo]
+ */
+
 @HiltViewModel
 class WordInfoViewModel @Inject constructor(
     private val getWordInfo: GetWordInfo
@@ -25,10 +29,10 @@ class WordInfoViewModel @Inject constructor(
         const val SEARCH_DELAY = 500L
     }
 
-    private val _state = mutableStateOf<WordInfoState>(WordInfoState())
+    private val _state = mutableStateOf(WordInfoState())
     val state: State<WordInfoState> = _state
 
-    private val _searchQuery = mutableStateOf<String>("")
+    private val _searchQuery = mutableStateOf("")
     val searchQuery: State<String> = _searchQuery
 
     private val _eventFlow = MutableSharedFlow<UIEvent>()

@@ -2,7 +2,6 @@ package com.example.dictionary.feature_dictionary.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.dictionary.feature_dictionary.data.local.WordInfoDao
 import com.example.dictionary.feature_dictionary.data.local.WordInfoDatabase
 import com.example.dictionary.feature_dictionary.data.remote.DictionaryApi
 import com.example.dictionary.feature_dictionary.data.repository.WordInfoRepositoryImpl
@@ -17,8 +16,11 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
+
+/**
+ * Injeção de dependência utilizando o Dagger
+ */
 
 @Module
 @InstallIn(SingletonComponent::class)
